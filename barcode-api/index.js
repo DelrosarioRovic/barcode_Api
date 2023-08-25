@@ -1,7 +1,6 @@
 
 import '@shopify/shopify-api/adapters/node';
 import bodyParser from 'body-parser';
-import {shopifyApi, LATEST_API_VERSION} from '@shopify/shopify-api';
 import express from 'express';
 import cors from "cors";
 import connectToDatabase from "./connection.js";
@@ -15,17 +14,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const port = 3000;
 connectToDatabase();
 
- 
-
-
   //search to arrayt
   function linearSearch(arr, target) {
     for (let i = 0; i < arr.length; i++) {
+
       if (arr[i].id === target) {
         return arr[i]
-      }
+      } 
     }
-    return "No data exist";
+    return "No Product Exists";
 }
 
  // getting data from shopify inventory 
